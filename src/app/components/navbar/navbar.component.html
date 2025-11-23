@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="navbar__logo">MyApp</div>
+
+  <button class="navbar__toggle" (click)="toggleMenu()">&#9776;</button>
+
+  <ul class="navbar__links" [class.navbar__links--open]="isMenuOpen">
+    <li class="navbar__item">
+      <a class="navbar__link" routerLink="/">Home</a>
+    </li>
+    <li class="navbar__item">
+      <a class="navbar__link" routerLink="/about">About</a>
+    </li>
+    <li class="navbar__item">
+      <a class="navbar__link" routerLink="/services">Services</a>
+    </li>
+    <li class="navbar__item">
+      <a class="navbar__link" routerLink="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>
