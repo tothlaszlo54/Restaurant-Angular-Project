@@ -2,13 +2,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1rem;
-  background-color: #333;
+  position: relative;
+  padding: 0.8rem 2.5rem;
+  background-color: #712713;
+
   color: #fff;
 
+  @media (min-width: 768px) {
+    padding: 2.2rem 2.5rem;
+  }
+
+  /* LOGO középre igazítás */
   &__logo {
-    font-size: 1.4rem;
-    font-weight: bold;
+    height: 75px;
+    width: 75px;
+    overflow: hidden;
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__toggle {
@@ -23,7 +41,31 @@
     }
   }
 
-  &__links {
+  /* DESKTOP MENÜ */
+  &__links__desktop {
+    list-style: none;
+    display: none; /* mobilon nem kell */
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    /* Bal és jobb igazítás */
+    &--left {
+      margin-right: auto;
+    }
+
+    &--right {
+      margin-left: auto;
+    }
+  }
+
+  /* MOBIL MENÜ */
+  &__links__mobile {
     list-style: none;
     display: none;
     flex-direction: column;
@@ -31,16 +73,12 @@
     margin: 0;
     padding: 0;
     background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
 
     &--open {
       display: flex;
-    }
-
-    @media (min-width: 768px) {
-      display: flex;
-      flex-direction: row;
-      width: auto;
-      background: none;
     }
   }
 
@@ -54,7 +92,7 @@
 
   &__link {
     display: block;
-    padding: 0.8rem 1rem;
+    padding: 1.2rem 1.5rem;
     color: #fff;
     text-decoration: none;
 
@@ -63,7 +101,7 @@
     }
 
     @media (min-width: 768px) {
-      padding: 0 1rem;
+      padding: 0 1.5rem;
 
       &:hover {
         background-color: transparent;
