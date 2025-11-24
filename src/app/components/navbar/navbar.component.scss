@@ -42,7 +42,7 @@
   }
 
   /* DESKTOP MENÜ */
-  &__links__desktop {
+  &-links__desktop {
     list-style: none;
     display: none; /* mobilon nem kell */
     flex-direction: row;
@@ -65,7 +65,7 @@
   }
 
   /* MOBIL MENÜ */
-  &__links__mobile {
+  &-links__mobile {
     list-style: none;
     display: none;
     flex-direction: column;
@@ -95,6 +95,8 @@
     padding: 1.2rem 1.5rem;
     color: #fff;
     text-decoration: none;
+
+    font-size: 20px;
 
     &:hover {
       background-color: #444;

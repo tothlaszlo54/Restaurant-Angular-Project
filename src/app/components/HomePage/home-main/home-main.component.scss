@@ -1,0 +1,31 @@
+.hero__section {
+  background: url("/assets/images/restaurant-interior.jpg") center/cover
+    no-repeat;
+  clip-path: ellipse(80% 100% at 50% 0);
+
+  height: 600px;
+  position: relative;
+
+  .btn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #712713;
+    border: none;
+
+    font-size: 20px;
+
+    padding: 8px 15px;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+div {
+  height: 500px;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}

@@ -3,46 +3,50 @@
   <button class="navbar__toggle" (click)="toggleMenu()">&#9776;</button>
 
   <!-- Bal oldali menü desktopon -->
-  <ul class="navbar__links__desktop navbar__links__desktop--left">
+  <ul class="navbar-links__desktop navbar-links__desktop--left">
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/">Home</a>
+      <a class="navbar__link" routerLink="/">Menu</a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/about">About</a>
+      <a class="navbar__link" routerLink="/about">Reservation</a>
     </li>
   </ul>
 
   <!-- Középen a LOGO -->
   <div class="navbar__logo">
-    <img src="../../../assets/images/Bite_Factory_crop.svg" alt="logo" />
+    <img
+      src="../../../assets/images/Bite_Factory_crop.svg"
+      alt="logo"
+      routerLink="/"
+    />
   </div>
 
   <!-- Jobb oldali menü desktopon -->
-  <ul class="navbar__links__desktop navbar__links__desktop--right">
+  <ul class="navbar-links__desktop navbar-links__desktop--right">
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/services">Services</a>
+      <a class="navbar__link" routerLink="/services">About us</a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/contact">Contact</a>
+      <a class="navbar__link" routerLink="/contact">Events</a>
     </li>
   </ul>
 
   <!-- menü mobilon -->
   <ul
-    class="navbar__links__mobile"
-    [class.navbar__links__mobile--open]="isMenuOpen"
+    class="navbar-links__mobile"
+    [class.navbar-links__mobile--open]="isMenuOpen"
   >
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/">Home</a>
+      <a class="navbar__link" routerLink="/">Menu</a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/about">About</a>
+      <a class="navbar__link" routerLink="/about">Reservation</a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/services">Services</a>
+      <a class="navbar__link" routerLink="/services">About us</a>
     </li>
     <li class="navbar__item">
-      <a class="navbar__link" routerLink="/contact">Contact</a>
+      <a class="navbar__link" routerLink="/contact">Events</a>
     </li>
   </ul>
 </nav>
