@@ -1,31 +1,119 @@
+%button-style {
+  background-color: #712713;
+  border: none;
+
+  font-size: 20px;
+
+  padding: 8px 15px;
+
+  img {
+    height: 30px;
+  }
+}
+
 .hero__section {
   background: url("/assets/images/restaurant-interior.jpg") center/cover
     no-repeat;
-  clip-path: ellipse(80% 100% at 50% 0);
+  clip-path: ellipse(100% 90% at 50% 0);
 
   height: 600px;
   position: relative;
 
   .btn {
+    @extend %button-style;
     position: absolute;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: #712713;
-    border: none;
+    z-index: 1;
+  }
 
-    font-size: 20px;
+  div {
+    background-color: rgba(0, 0, 0, 0.4);
+    clip-path: ellipse(80% 100% at 50% 0);
+    height: 600px;
+  }
 
-    padding: 8px 15px;
+  @media (min-width: 768px) {
+    clip-path: ellipse(80% 100% at 50% 0);
+  }
+}
 
-    img {
-      height: 30px;
+.story__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 4rem 2rem;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 800px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    @extend %button-style;
+  }
+
+  @media (min-width: 768px) {
+    padding: 6rem 2rem;
+
+    h2 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
 }
-div {
-  height: 500px;
 
-  background-color: rgba(0, 0, 0, 0.4);
+.chef-pics__section {
+  display: flex;
+  height: 400px;
+
+  .chef-pics__left {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f0d2c2;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .btn {
+      @extend %button-style;
+    }
+  }
+  .chef-pics__img {
+    height: 100%;
+    width: 50%;
+
+    background: url("/assets/images/hamburger_mobile.jpg") center/cover
+      no-repeat;
+
+    @media (min-width: 768px) {
+      background: url("/assets/images/hamburger_pc.jpg") center/cover no-repeat;
+    }
+  }
 }
