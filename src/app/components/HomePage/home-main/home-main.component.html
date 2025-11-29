@@ -1,3 +1,4 @@
+<!-- HERO SECTION -->
 <section class="hero__section">
   <button class="btn btn-success rounded-pill">
     Reserve <img src="/assets/images/dish.svg" alt="dish_ikon" />
@@ -5,6 +6,7 @@
   <div class="hero__overlay"></div>
 </section>
 
+<!-- STORY SECTION -->
 <section class="story__section">
   <h2>Our Story</h2>
   <p>
@@ -19,6 +21,7 @@
   </button>
 </section>
 
+<!-- CHEF'S PICS SECTION -->
 <section class="chef-pics__section">
   <div class="chef-pics__left">
     <h3>The Menu</h3>
@@ -30,3 +33,30 @@
 
   <div class="chef-pics__img"></div>
 </section>
+
+<!-- CAROUSEL -->
+<section class="food-carousel__section"></section>
+<div class="food-carousel">
+  <button
+    class="food-carousel__nav food-carousel__nav--prev"
+    (click)="scrollLeft()"
+  >
+    &#10094;
+  </button>
+
+  <div #carousel class="food-carousel__track">
+    <img
+      *ngFor="let img of foodImages"
+      [src]="img"
+      alt="food"
+      class="food-carousel__img"
+    />
+  </div>
+
+  <button
+    class="food-carousel__nav food-carousel__nav--next"
+    (click)="scrollRight()"
+  >
+    &#10095;
+  </button>
+</div>

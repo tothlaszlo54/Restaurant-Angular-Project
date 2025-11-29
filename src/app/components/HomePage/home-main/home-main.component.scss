@@ -1,5 +1,7 @@
+$background-color: #712713;
+
 %button-style {
-  background-color: #712713;
+  background-color: $background-color;
   border: none;
 
   font-size: 20px;
@@ -115,5 +117,77 @@
     @media (min-width: 768px) {
       background: url("/assets/images/hamburger_pc.jpg") center/cover no-repeat;
     }
+  }
+}
+
+//Carousel
+
+.food-carousel {
+  position: relative;
+  margin: 40px auto;
+
+  width: 90%;
+  padding: 0 80px; // hely a nyilaknak mobilon
+
+  &__track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 12px 10px;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    height: 350px;
+    aspect-ratio: 1.4/3;
+    border-radius: 30px;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+
+    background: $background-color;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+
+    padding: 6px 24px;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    &:hover {
+      background: $background-color;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &--prev {
+      left: 10px;
+    }
+
+    &--next {
+      right: 10px;
+    }
+  }
+
+  /* DESKTOP */
+  @media (min-width: 768px) {
+    padding: 0 120px;
   }
 }
