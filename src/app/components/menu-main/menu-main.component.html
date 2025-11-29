@@ -1,1 +1,49 @@
-<p>menu-main works!</p>
+<div class="split-layout">
+  <div class="split-layout__image"></div>
+
+  <div class="split-layout__content">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        class="tabs__btn"
+        [class.active]="activeTab === 'food'"
+        (click)="activeTab = 'food'"
+      >
+        Food
+      </button>
+
+      <button
+        class="tabs__btn"
+        [class.active]="activeTab === 'drinks'"
+        (click)="activeTab = 'drinks'"
+      >
+        Drinks
+      </button>
+    </div>
+
+    <!-- Allergen filter -->
+    <div class="filters">
+      <label *ngFor="let allergen of availableAllergens">
+        <input type="checkbox" [(ngModel)]="filter[allergen]" />
+        {{ allergen }}
+      </label>
+    </div>
+
+    <!-- Menu listing -->
+    <div class="menu-list">
+      <div *ngFor="let item of filteredMenu()" class="menu-item">
+        <h3>{{ item.name }}</h3>
+        <p class="menu-item__desc">
+          {{ item.description }}
+        </p>
+        <p class="menu-item__price">${{ item.price }}</p>
+
+        <div class="menu-item__tags">
+          <span *ngFor="let tag of item.tags">
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

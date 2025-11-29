@@ -8,10 +8,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeMainComponent } from './components/HomePage/home-main/home-main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeMainComponent, FooterComponent, MenuMainComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeMainComponent,
+    FooterComponent,
+    MenuMainComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
