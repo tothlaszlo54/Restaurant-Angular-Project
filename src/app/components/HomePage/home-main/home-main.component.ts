@@ -20,6 +20,11 @@ export class HomeMainComponent {
     '/assets/images/carousel/food3.jpg',
     '/assets/images/carousel/food4.jpg',
     '/assets/images/carousel/food5.jpg',
+    '/assets/images/carousel/food1.jpg',
+    '/assets/images/carousel/food2.jpg',
+    '/assets/images/carousel/food3.jpg',
+    '/assets/images/carousel/food4.jpg',
+    '/assets/images/carousel/food5.jpg',
   ];
 
   private scrollAmount = 180;
