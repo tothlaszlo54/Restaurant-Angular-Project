@@ -1,0 +1,28 @@
+<div class="reservation-form">
+  <form [formGroup]="reservationForm">
+    <label>
+      Party Size:
+      <select formControlName="partySize">
+        <option *ngFor="let size of partySizes" [value]="size">
+          {{ size }}
+        </option>
+      </select>
+    </label>
+
+    <label>
+      Date:
+      <input type="date" formControlName="date" />
+    </label>
+  </form>
+
+  <div class="slots-grid">
+    <button
+      *ngFor="let slot of slots"
+      [disabled]="!slot.available"
+      (click)="bookSlot(slot)"
+      [class.available]="slot.available"
+    >
+      {{ slot.time }}
+    </button>
+  </div>
+</div>

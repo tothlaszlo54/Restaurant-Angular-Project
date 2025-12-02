@@ -8,7 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeMainComponent } from './components/HomePage/home-main/home-main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { FormsModule } from '@angular/forms';
     HomeMainComponent,
     FooterComponent,
     MenuMainComponent,
+    ReservationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
