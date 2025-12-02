@@ -1,21 +1,23 @@
 // Breakpoint
 $bp-md: 768px;
 
-// Színek
-$color-tag-bg: #ffffff33;
-$color-bg: #90432b;
+// Színek – új, E2BCAC kompatibilis paletta
+$color-bg: #e2bcac; // világos háttér
+$color-text-dark: #4a2a20; // jól olvasható sötétbarna
+$color-accent: #712713; // navbar/footer szín
+$color-tag-bg: #ffffff55; // finom áttetsző világos
 $color-scrollbar-track: $color-tag-bg;
-$color-scrollbar-thumb: $color-bg;
-$color-tab-bg: #6a2818;
+$color-scrollbar-thumb: $color-accent; // accent
+$color-tab-bg: #7d4a38; // sötétebb barna, jól látszik világos bg-n
 $color-tab-active-bg: #fff;
-$color-tab-active-text: $color-bg;
-$color-menu-bg: #ffffff22;
+$color-tab-active-text: $color-accent;
+$color-menu-bg: $color-tag-bg; // világos kártyaháttér
 
 // MOBILE FIRST (alapértelmezett single-column)
 .split-layout {
   display: flex;
   flex-direction: column;
-  height: auto; // mobilon ne legyen vh fix
+  height: auto;
 
   &__image {
     height: 40vh;
@@ -26,7 +28,7 @@ $color-menu-bg: #ffffff22;
   &__content {
     padding: 1.5rem;
     background: $color-bg;
-    color: #ffffff;
+    color: $color-text-dark;
   }
 }
 
@@ -34,7 +36,7 @@ $color-menu-bg: #ffffff22;
 @media (min-width: $bp-md) {
   .split-layout {
     flex-direction: row;
-    height: 100vh; // teljes képernyő magasság
+    height: 100vh;
 
     &__image {
       flex: 0 0 50%;
@@ -49,6 +51,8 @@ $color-menu-bg: #ffffff22;
       overflow-y: auto;
       height: 100vh;
       padding: 2rem;
+      background: $color-bg;
+      color: $color-text-dark;
 
       // Scrollbar
       &::-webkit-scrollbar {
@@ -75,7 +79,7 @@ $color-menu-bg: #ffffff22;
 
   &__btn {
     background: $color-tab-bg;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 0.6rem 1.4rem;
     border-radius: 20px;
     cursor: pointer;
@@ -85,6 +89,7 @@ $color-menu-bg: #ffffff22;
       background: $color-tab-active-bg;
       color: $color-tab-active-text;
       font-weight: bold;
+      border-color: $color-accent;
     }
   }
 }
@@ -92,13 +97,14 @@ $color-menu-bg: #ffffff22;
 // FILTERS
 .filters {
   display: flex;
-  flex-wrap: wrap; // mobilon törjön
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.5rem;
 
   label {
     font-size: 0.9rem;
     cursor: pointer;
+    color: $color-text-dark;
 
     input {
       margin-right: 0.3rem;
@@ -121,10 +127,12 @@ $color-menu-bg: #ffffff22;
   &__desc {
     opacity: 0.85;
     margin: 0.5rem 0;
+    color: $color-text-dark;
   }
 
   &__price {
     font-weight: bold;
+    color: $color-accent;
   }
 
   &__tags {
@@ -138,6 +146,7 @@ $color-menu-bg: #ffffff22;
       padding: 0.2rem 0.6rem;
       border-radius: 8px;
       font-size: 0.75rem;
+      color: $color-text-dark;
     }
   }
 }
