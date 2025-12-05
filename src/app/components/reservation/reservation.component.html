@@ -13,7 +13,23 @@
       Date:
       <input type="date" formControlName="date" />
     </label>
+
+    <label class="full-width-input">
+      Név:
+      <input type="text" formControlName="name" placeholder="Teljes név" />
+    </label>
+
+    <label class="full-width-input">
+      Email:
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="email@pelda.hu"
+      />
+    </label>
   </form>
+
+  <h3 class="slots-heading" *ngIf="slots.length > 0">Elérhető Időpontok</h3>
 
   <div class="slots-grid">
     <button
