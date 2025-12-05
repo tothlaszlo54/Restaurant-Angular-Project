@@ -1,46 +1,119 @@
+/* A meglévő, mobil-centrikus stílusok */
 .reservation-form {
-  max-width: 400px;
-  margin: auto;
+  max-width: 400px; /* Alapértelmezett (mobil) szélesség */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 
   label {
     display: flex;
     flex-direction: column;
-    font-weight: bold;
+    font-weight: 600;
+    color: #712713;
+    font-size: 0.95rem;
   }
 
   input,
   select {
-    padding: 0.5rem;
+    padding: 0.75rem;
     font-size: 1rem;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+
+    &:focus {
+      outline: none;
+      border-color: #a73737;
+      box-shadow: 0 0 0 2px rgba(167, 55, 55, 0.2);
+    }
   }
+}
+
+.slots-heading {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #712713;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 2px solid #e2bcac;
+  padding-bottom: 5px;
 }
 
 .slots-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.75rem;
   margin-top: 1rem;
 
   button {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: #ddd;
+    transition: all 0.2s ease-in-out;
+    background-color: #f5eae0;
+    color: #712713;
 
     &.available {
-      background-color: #4caf50;
+      background-color: #a73737;
       color: white;
+      border-color: #712713;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: #712713;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      }
     }
 
     &:disabled {
-      background-color: #ccc;
+      background-color: #e2bcac;
+      color: #712713;
+      opacity: 0.6;
       cursor: not-allowed;
+      box-shadow: none;
+      border-color: #c9a491;
     }
+  }
+}
+
+/* === DESKTOP OPTIMALIZÁCIÓ === */
+
+@media (min-width: 768px) {
+  .reservation-form {
+    max-width: 700px; /* Megnövelt maximális szélesség desktopon */
+    padding: 3rem;
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Két azonos szélességű oszlop */
+      gap: 2rem;
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+
+    /* A Név és Email mezőnek teljes szélességet adunk a két oszlopos rácsban */
+    .full-width-input {
+      grid-column: 1 / -1; /* Teljes szélesség az első oszloptól az utolsóig */
+    }
+
+    .slots-heading {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .slots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
