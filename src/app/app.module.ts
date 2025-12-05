@@ -10,7 +10,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuMainComponent } from './components/menu-main/menu-main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReservationComponent } from './components/reservation/reservation.component';
-
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +23,30 @@ import { ReservationComponent } from './components/reservation/reservation.compo
     MenuMainComponent,
     ReservationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+  ],
+  providers: [
+    provideFirebaseApp(() =>
+      initializeApp({
+        projectId: 'restaurant-webapp-5d9ee',
+        appId: '1:104748378984:web:ce320f25b834dd5d4e84dd',
+        storageBucket: 'restaurant-webapp-5d9ee.firebasestorage.app',
+        apiKey: 'AIzaSyBI_Bk5K57G_6-CvwFSUBmIVvbX7w-0CgU',
+        authDomain: 'restaurant-webapp-5d9ee.firebaseapp.com',
+        messagingSenderId: '104748378984',
+        measurementId: 'G-0YHNN8NWQ1',
+        // projectNumber: '104748378984',
+        // version: '2',
+      })
+    ),
+    provideFirestore(() => getFirestore()),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
