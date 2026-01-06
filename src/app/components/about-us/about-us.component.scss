@@ -1,0 +1,248 @@
+$background-color: #712713;
+
+@mixin button-style {
+  background-color: $background-color;
+  border: none;
+
+  font-size: 20px;
+
+  padding: 8px 15px;
+
+  img {
+    height: 30px;
+  }
+}
+
+.hero__section {
+  height: 600px;
+  background: url("/assets/images/about_us/chef-team.jpg") center/cover
+    no-repeat;
+}
+
+.restaurant__section {
+  text-align: center;
+  padding: 80px 20px;
+
+  .restaurant__text {
+    .restaurant__title {
+      display: inline-block; /* hogy a háttér csak a szöveg körül legyen */
+      background-color: #fff; /* fehér doboz */
+
+      padding: 0.5rem 1rem; /* doboz belső margója */
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 500;
+
+      border-left: 5px solid #ff8c42;
+      border-right: 5px solid #ff8c42;
+    }
+
+    .btn {
+      margin-top: 30px;
+      @include button-style;
+    }
+  }
+
+  .restaurant__images {
+    padding-top: 50px;
+    img:first-child {
+      height: 300px;
+      aspect-ratio: 2/3;
+      transform: rotate(20deg);
+    }
+
+    img:nth-child(2) {
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 50px 40px;
+
+    .restaurant__images {
+      margin: auto;
+      padding-top: 0;
+      img:first-child {
+        height: 330px;
+        transform: rotate(20deg) translate(50px);
+      }
+
+      img:nth-child(2) {
+        height: 230px;
+      }
+    }
+
+    .restaurant__text {
+      .restaurant__title {
+        border-right: none;
+      }
+      text-align: left;
+      max-width: 400px;
+    }
+  }
+}
+
+.chef__section {
+  text-align: center;
+  padding: 50px 20px;
+
+  background-color: #ffddd2;
+
+  .chef__image-container {
+    .chef__img-title {
+      display: inline-block; /* hogy a háttér csak a szöveg körül legyen */
+      background-color: #fff; /* fehér doboz */
+
+      padding: 0.5rem 1rem; /* doboz belső margója */
+      margin: 40px 0;
+
+      font-size: 2rem;
+      font-weight: 500;
+
+      border-left: 5px solid #ff8c42;
+      border-right: 5px solid #ff8c42;
+    }
+
+    img {
+      width: 90%;
+
+      aspect-ratio: 2/3;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .chef__text {
+    margin-top: 30px;
+    .btn {
+      margin-top: 30px;
+      @include button-style;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    padding: 50px 40px;
+
+    .chef__image-container {
+      text-align: left;
+      .chef__img-title {
+        border-right: none;
+        margin: 0;
+      }
+
+      img {
+        margin: 0;
+        border-left: #ff8c42 5px solid;
+      }
+    }
+
+    .chef__text {
+      text-align: left;
+
+      margin: 3rem 0 1rem 0;
+      padding-left: 50px;
+    }
+  }
+}
+
+.info {
+  text-align: center;
+
+  &__title-main {
+    display: inline-block;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    margin: 40px 0;
+    font-weight: 500;
+    font-size: 2rem;
+
+    border-left: 8px solid #ff8c42;
+    border-right: 8px solid #ff8c42;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); // finom árnyék
+    text-align: center;
+  }
+
+  &__map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3rem 5%;
+
+    &-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border-radius: 1rem;
+    }
+  }
+
+  &__opening {
+    margin: 3rem 5%;
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+    font-weight: 500;
+    border-bottom: 3px solid #ff8c42; // meleg narancs
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+
+  &__hours {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__row {
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+    &--highlight {
+      .info__day,
+      .info__time {
+        color: $background-color;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__day,
+  &__time {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+  }
+
+  &__day {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  &__time {
+    text-align: right;
+    color: #555;
+  }
+
+  @media (min-width: 768px) {
+    &__content {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__map,
+    &__opening {
+      flex: 1;
+    }
+  }
+}

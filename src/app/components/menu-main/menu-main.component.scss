@@ -78,16 +78,16 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   margin-bottom: 1.5rem;
 
   &__btn {
-    background: $color-tab-bg;
+    background: $color-tab-active-bg;
     border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 0.6rem 1.4rem;
     border-radius: 20px;
     cursor: pointer;
-    color: #fff;
+    color: $color-tab-active-text;
 
     &.active {
-      background: $color-tab-active-bg;
-      color: $color-tab-active-text;
+      background: $color-tab-bg;
+      color: #fff;
       font-weight: bold;
       border-color: $color-accent;
     }
