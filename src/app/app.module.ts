@@ -15,6 +15,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { EventsComponent } from './components/events/events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     MenuMainComponent,
     ReservationComponent,
     AboutUsComponent,
+    EventsComponent,
   ],
   imports: [
     BrowserModule,
