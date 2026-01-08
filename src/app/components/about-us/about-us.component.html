@@ -1,35 +1,54 @@
-<section class="hero__section"></section>
-<section class="restaurant__section">
+<section class="hero hero--about"></section>
+
+<section class="restaurant">
   <div class="restaurant__text">
-    <h3 class="restaurant__title">Our Restaurant</h3>
+    <h3 class="section-title restaurant__title">Our Restaurant</h3>
+
     <p>
       Bite Factory is a modern restaurant built on passion, creativity, and
       attention to detail. We believe a great dining experience starts with
       atmosphere, welcoming spaces, and a team that truly cares about every
-      guest. Whether you’re joining us for a casual visit or a special occasion,
-      Bite Factory is a place where people come together and feel at home
+      guest.
     </p>
+
     <p>
       Designed with a contemporary urban style, our restaurant blends comfort
       with character. Every detail reflects our commitment to quality,
       authenticity, and creating an experience worth coming back for.
     </p>
 
-    <button class="btn btn-success rounded-pill">
-      Reserve <img src="/assets/images/dish.svg" alt="dish_ikon" />
+    <button class="btn btn-success rounded-pill restaurant__button">
+      Reserve
+      <img src="/assets/images/dish.svg" alt="Dish icon" />
     </button>
   </div>
+
   <div class="restaurant__images">
-    <img src="/assets/images/about_us/restaurant-1.jpg" alt="" />
-    <img src="/assets/images/about_us/restaurant-2.jpg" alt="" />
+    <img
+      class="restaurant__image restaurant__image--primary"
+      src="/assets/images/about_us/restaurant-1.jpg"
+      alt="Restaurant interior"
+    />
+    <img
+      class="restaurant__image restaurant__image--secondary"
+      src="/assets/images/about_us/restaurant-2.jpg"
+      alt="Restaurant detail"
+    />
   </div>
 </section>
-<section class="chef__section">
-  <div class="chef__image-container">
-    <h3 class="chef__img-title">André Bicalho</h3>
-    <img src="/assets/images/about_us/chef.jpg" alt="" />
+
+<section class="chef">
+  <div class="chef__media">
+    <h3 class="section-title chef__name">André Bicalho</h3>
+
+    <img
+      class="chef__image"
+      src="/assets/images/about_us/chef.jpg"
+      alt="Chef André Bicalho"
+    />
   </div>
-  <div class="chef__text">
+
+  <div class="chef__content">
     <p>
       Our chef at Bite Factory is the heart of everything we do, combining
       passion, skill, and creativity in every dish. With years of experience and
@@ -53,26 +72,27 @@
       to ensure an unforgettable culinary journey.
     </p>
 
-    <button class="btn btn-success rounded-pill">
-      Reserve <img src="/assets/images/dish.svg" alt="dish_ikon" />
+    <button class="btn btn-success rounded-pill chef__button">
+      Reserve
+      <img src="/assets/images/dish.svg" alt="Dish icon" />
     </button>
   </div>
 </section>
 
 <section class="info">
-  <h2 class="info__title-main">Come for a Dinner!</h2>
+  <h2 class="section-title info__title">Come for a Dinner!</h2>
 
   <div class="info__content">
     <div class="info__map">
       <iframe
         class="info__map-frame"
         allow="geolocation"
-        src="https://api.maptiler.com/maps/streets-v4/?key=kSrmXP5PltYH3rWyqjPW#4.9/42.91463/22.06729"
+        src="https://api.maptiler.com/maps/streets-v4/?key=kSrmXP5PltYH3rWyqjPW"
       ></iframe>
     </div>
 
     <div class="info__opening">
-      <h3 class="info__title">Opening Hours</h3>
+      <h3 class="info__subtitle">Opening Hours</h3>
 
       <table class="info__hours">
         <tbody>

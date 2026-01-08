@@ -1,28 +1,28 @@
-// Breakpoint
+/* ===== BREAKPOINT ===== */
 $bp-md: 768px;
 
-// Színek – új, E2BCAC kompatibilis paletta
-$color-bg: #e2bcac; // világos háttér
-$color-text-dark: #4a2a20; // jól olvasható sötétbarna
-$color-accent: #712713; // navbar/footer szín
-$color-tag-bg: #ffffff55; // finom áttetsző világos
+/* ===== COLORS ===== */
+$color-bg: #e2bcac;
+$color-text-dark: #4a2a20;
+$color-accent: #712713;
+$color-tag-bg: #ffffff55;
 $color-scrollbar-track: $color-tag-bg;
-$color-scrollbar-thumb: $color-accent; // accent
-$color-tab-bg: #7d4a38; // sötétebb barna, jól látszik világos bg-n
+$color-scrollbar-thumb: $color-accent;
+$color-tab-bg: #7d4a38;
 $color-tab-active-bg: #fff;
 $color-tab-active-text: $color-accent;
-$color-menu-bg: $color-tag-bg; // világos kártyaháttér
+$color-menu-bg: $color-tag-bg;
 
-// MOBILE FIRST (alapértelmezett single-column)
+/* ===== LAYOUT (MOBILE FIRST) ===== */
 .split-layout {
   display: flex;
   flex-direction: column;
   height: auto;
 
   &__image {
-    height: 40vh;
-    background: url("/assets/images/menu_pizza.jpg") center/cover no-repeat;
     width: 100%;
+    height: 40vh;
+    background: url("/assets/images/menu_pizza.jpg") center / cover no-repeat;
   }
 
   &__content {
@@ -32,29 +32,28 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   }
 }
 
-// DESKTOP (768px+) – split, bal sticky kép, jobb scroll
+/* ===== LAYOUT (DESKTOP) ===== */
 @media (min-width: $bp-md) {
   .split-layout {
     flex-direction: row;
     height: 100vh;
 
     &__image {
-      flex: 0 0 50%;
-      height: 100vh;
       position: sticky;
       top: 0;
-      background: url("/assets/images/menu_pizza.jpg") center/cover no-repeat;
+      flex: 0 0 50%;
+      height: 100vh;
+      background: url("/assets/images/menu_pizza.jpg") center / cover no-repeat;
     }
 
     &__content {
       flex: 1;
-      overflow-y: auto;
       height: 100vh;
       padding: 2rem;
+      overflow-y: auto;
       background: $color-bg;
       color: $color-text-dark;
 
-      // Scrollbar
       &::-webkit-scrollbar {
         width: 12px;
         background: $color-scrollbar-track;
@@ -71,19 +70,20 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   }
 }
 
-// TABS
+/* ===== TABS ===== */
 .tabs {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
 
   &__btn {
-    background: $color-tab-active-bg;
-    border: 1px solid rgba(0, 0, 0, 0.15);
     padding: 0.6rem 1.4rem;
     border-radius: 20px;
     cursor: pointer;
+
+    background: $color-tab-active-bg;
     color: $color-tab-active-text;
+    border: 1px solid rgba(0, 0, 0, 0.15);
 
     &.active {
       background: $color-tab-bg;
@@ -94,7 +94,7 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   }
 }
 
-// FILTERS
+/* ===== FILTERS ===== */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +112,7 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   }
 }
 
-// MENU ITEMS
+/* ===== MENU LIST ===== */
 .menu-list {
   display: flex;
   flex-direction: column;
@@ -120,13 +120,13 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
 }
 
 .menu-item {
-  background: $color-menu-bg;
   padding: 1.5rem;
   border-radius: 10px;
+  background: $color-menu-bg;
 
   &__desc {
-    opacity: 0.85;
     margin: 0.5rem 0;
+    opacity: 0.85;
     color: $color-text-dark;
   }
 
@@ -136,16 +136,16 @@ $color-menu-bg: $color-tag-bg; // világos kártyaháttér
   }
 
   &__tags {
-    margin-top: 0.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.5rem;
 
     span {
-      background: $color-tag-bg;
       padding: 0.2rem 0.6rem;
       border-radius: 8px;
       font-size: 0.75rem;
+      background: $color-tag-bg;
       color: $color-text-dark;
     }
   }

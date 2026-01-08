@@ -1,8 +1,8 @@
 <nav class="navbar">
-  <!-- Toggle ikon mobilra -->
+  <!-- Mobile toggle -->
   <button class="navbar__toggle" (click)="toggleMenu()">&#9776;</button>
 
-  <!-- Bal oldali menü desktopon -->
+  <!-- Desktop left menu -->
   <ul class="navbar-links__desktop navbar-links__desktop--left">
     <li class="navbar__item">
       <a class="navbar__link" routerLink="menu">Menu</a>
@@ -12,16 +12,16 @@
     </li>
   </ul>
 
-  <!-- Középen a LOGO -->
+  <!-- Logo (centered) -->
   <div class="navbar__logo">
     <img
       src="../../../assets/images/Bite_Factory_crop.svg"
-      alt="logo"
+      alt="Bite Factory logo"
       routerLink=""
     />
   </div>
 
-  <!-- Jobb oldali menü desktopon -->
+  <!-- Desktop right menu -->
   <ul class="navbar-links__desktop navbar-links__desktop--right">
     <li class="navbar__item">
       <a class="navbar__link" routerLink="about">About us</a>
@@ -31,7 +31,7 @@
     </li>
   </ul>
 
-  <!-- menü mobilon -->
+  <!-- Mobile menu -->
   <ul
     class="navbar-links__mobile"
     [class.navbar-links__mobile--open]="isMenuOpen"

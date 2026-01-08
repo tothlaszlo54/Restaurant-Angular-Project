@@ -1,11 +1,10 @@
 $background-color: #712713;
 
+/* ===== PLACEHOLDERS ===== */
 %button-style {
   background-color: $background-color;
   border: none;
-
   font-size: 20px;
-
   padding: 8px 15px;
 
   img {
@@ -13,13 +12,13 @@ $background-color: #712713;
   }
 }
 
+/* ===== HERO ===== */
 .hero__section {
-  background: url("/assets/images/restaurant-interior.jpg") center/cover
+  position: relative;
+  height: 600px;
+  background: url("/assets/images/restaurant-interior.jpg") center / cover
     no-repeat;
   clip-path: ellipse(100% 90% at 50% 0);
-
-  height: 600px;
-  position: relative;
 
   .btn {
     @extend %button-style;
@@ -27,14 +26,13 @@ $background-color: #712713;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     z-index: 1;
   }
 
   div {
+    height: 600px;
     background-color: rgba(0, 0, 0, 0.4);
     clip-path: ellipse(80% 100% at 50% 0);
-    height: 600px;
   }
 
   @media (min-width: 768px) {
@@ -42,12 +40,12 @@ $background-color: #712713;
   }
 }
 
+/* ===== STORY ===== */
 .story__section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   padding: 4rem 2rem;
 
   h2 {
@@ -58,16 +56,16 @@ $background-color: #712713;
       content: "";
       display: block;
       height: 4px;
-      background-color: #ff8c42;
       margin-top: 0.5rem;
+      background-color: #ff8c42;
     }
   }
 
   p {
     max-width: 800px;
+    margin-bottom: 2rem;
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 2rem;
   }
 
   .btn {
@@ -80,81 +78,82 @@ $background-color: #712713;
     h2 {
       font-size: 3rem;
     }
+
     p {
       font-size: 1.2rem;
     }
   }
 }
 
+/* ===== CHEF PICKS ===== */
 .chef-pics__section {
   display: flex;
   height: 400px;
 
   .chef-pics__left {
-    height: 100%;
     width: 50%;
+    height: 100%;
+    background-color: #f0d2c2;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    background-color: #f0d2c2;
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+    }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 3rem;
     }
 
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.2rem;
-    }
-
     .btn {
       @extend %button-style;
     }
   }
-  .chef-pics__img {
-    height: 100%;
-    width: 50%;
 
-    background: url("/assets/images/hamburger_mobile.jpg") center/cover
+  .chef-pics__img {
+    width: 50%;
+    height: 100%;
+    background: url("/assets/images/hamburger_mobile.jpg") center / cover
       no-repeat;
 
     @media (min-width: 768px) {
-      background: url("/assets/images/hamburger_pc.jpg") center/cover no-repeat;
+      background: url("/assets/images/hamburger_pc.jpg") center / cover
+        no-repeat;
     }
   }
 }
 
-//Carousel
-
+/* ===== CAROUSEL ===== */
 .food-carousel {
   position: relative;
-  margin: 40px auto;
-
   width: 90%;
-  padding: 0 80px; // hely a nyilaknak mobilon
+  margin: 40px auto;
+  padding: 0 80px;
 
   &__track {
     display: flex;
     gap: 12px;
+    padding: 12px 10px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 12px 10px;
     scroll-behavior: smooth;
 
     scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
   }
 
   &__img {
-    object-fit: cover;
     height: 350px;
-    aspect-ratio: 1.4/3;
+    object-fit: cover;
+    aspect-ratio: 1.4 / 3;
     border-radius: 30px;
   }
 
@@ -162,26 +161,19 @@ $background-color: #712713;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: 0.2s;
-
-    background: $background-color;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-
-    color: #ffffff;
-
-    font-size: 1.5rem;
-
     padding: 6px 24px;
-
     border-radius: 50%;
     border: none;
-
     cursor: pointer;
-
     z-index: 10;
 
+    background: $background-color;
+    color: #ffffff;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+
     &:hover {
-      background: $background-color;
       transform: translateY(-50%) scale(1.1);
     }
 
@@ -194,7 +186,6 @@ $background-color: #712713;
     }
   }
 
-  /* DESKTOP */
   @media (min-width: 768px) {
     padding: 0 120px;
   }

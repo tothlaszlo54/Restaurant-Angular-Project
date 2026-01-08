@@ -1,5 +1,6 @@
 <div class="reservation-form">
   <form [formGroup]="reservationForm">
+    <!-- Party size -->
     <label>
       Party Size:
       <select formControlName="partySize">
@@ -9,11 +10,13 @@
       </select>
     </label>
 
+    <!-- Date -->
     <label>
       Date:
       <input type="date" formControlName="date" />
     </label>
 
+    <!-- Full-width inputs -->
     <label class="full-width-input">
       Név:
       <input type="text" formControlName="name" placeholder="Teljes név" />
@@ -29,8 +32,10 @@
     </label>
   </form>
 
+  <!-- Available slots heading -->
   <h3 class="slots-heading" *ngIf="slots.length > 0">Elérhető Időpontok</h3>
 
+  <!-- Slots grid -->
   <div class="slots-grid">
     <button
       *ngFor="let slot of slots"
