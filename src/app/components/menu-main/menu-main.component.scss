@@ -39,15 +39,13 @@ $color-menu-bg: $color-tag-bg;
     height: 100vh;
 
     &__image {
-      position: sticky;
-      top: 0;
-      flex: 0 0 50%;
+      width: 50%;
       height: 100vh;
       background: url("/assets/images/menu_pizza.jpg") center / cover no-repeat;
     }
 
     &__content {
-      flex: 1;
+      width: 50%;
       height: 100vh;
       padding: 2rem;
       overflow-y: auto;
@@ -56,11 +54,9 @@ $color-menu-bg: $color-tag-bg;
 
       &::-webkit-scrollbar {
         width: 12px;
-        background: $color-scrollbar-track;
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: $color-scrollbar-thumb;
         border-radius: 6px;
       }
 

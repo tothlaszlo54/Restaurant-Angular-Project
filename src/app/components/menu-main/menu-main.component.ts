@@ -230,15 +230,20 @@ export class MenuMainComponent {
   filteredMenu() {
     const items = this.activeTab === 'food' ? this.foodMenu : this.drinkMenu;
 
-    // nincs allergén szűrés → mindent visszaad
-    const anyFilterActive = Object.values(this.filter).some((v) => v === true);
-    if (!anyFilterActive) return items;
-
-    // allergén alapján szűrés
-    return items.filter((item) =>
-      Object.keys(this.filter).every(
-        (allergen) => !this.filter[allergen] || item.tags.includes(allergen)
-      )
+    const activeFilters = Object.keys(this.filter).filter(
+      (key) => this.filter[key]
     );
+    // nincs aktív szűrő → mindent visszaad
+    if (activeFilters.length === 0) return items;
+
+    return items.filter((item) => {
+      // ellenőrizzük, hogy az étel minden aktív szűrőt tartalmaz-e
+      for (let allergen of activeFilters) {
+        if (!item.tags.includes(allergen)) {
+          return false; // ha bármelyik hiányzik, kiesik
+        }
+      }
+      return true; // minden aktív szűrő szerepel → megtartjuk
+    });
   }
 }
