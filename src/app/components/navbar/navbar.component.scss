@@ -1,3 +1,5 @@
+$background-color: #712713;
+
 .navbar {
   position: relative;
   display: flex;
@@ -5,7 +7,7 @@
   justify-content: space-between;
 
   padding: 0.8rem 2.5rem;
-  background-color: #712713;
+  background-color: $background-color;
   color: #fff;
 
   @media (min-width: 768px) {
@@ -80,7 +82,7 @@
     padding: 0;
     list-style: none;
 
-    background-color: #333;
+    background-color: $background-color;
 
     &--open {
       display: flex;
@@ -89,7 +91,7 @@
 
   /* ===== MENU ITEMS ===== */
   &__item {
-    border-top: 1px solid #444;
+    border-top: 1px solid $background-color;
 
     @media (min-width: 768px) {
       border: none;
@@ -105,7 +107,7 @@
     font-size: 20px;
 
     &:hover {
-      background-color: #444;
+      background-color: $background-color;
     }
 
     @media (min-width: 768px) {
