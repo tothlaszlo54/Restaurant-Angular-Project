@@ -17,7 +17,7 @@ $background-color: #712713;
 .hero__section {
   position: relative;
   height: 600px;
-  background: url("/assets/images/restaurant-interior.jpg") center / cover
+  background: url("/assets/images/home/restaurant-interior.jpg") center / cover
     no-repeat;
   clip-path: ellipse(100% 90% at 50% 0);
 
@@ -119,11 +119,11 @@ $background-color: #712713;
   .chef-pics__img {
     width: 50%;
     height: 100%;
-    background: url("/assets/images/hamburger_mobile.jpg") center / cover
+    background: url("/assets/images/home/hamburger_mobile.jpg") center / cover
       no-repeat;
 
     @media (min-width: 768px) {
-      background: url("/assets/images/hamburger_pc.jpg") center / cover
+      background: url("/assets/images/home/hamburger_pc.jpg") center / cover
         no-repeat;
     }
   }
